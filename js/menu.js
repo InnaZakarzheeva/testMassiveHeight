@@ -3,6 +3,11 @@ var Menu =
     {
         preload: function ()
         {
+             /* Для маштабування, адаптивності
+     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+     game.scale.pageAlignHorizontally = true;
+     game.scale.pageAlignVertically = true;
+*/
             game.load.image('background', './assets/background.jpg');
             game.load.image('logo', './assets/donuts_logo.png');
             game.load.image('play', './assets/btn-play.png');
@@ -16,9 +21,9 @@ var Menu =
             // игровой лого для меню
             // Аргументы: X, Y, имя изображения (см. выше)
             this.add.image(0, 0, 'background');
-            this.add.image(0, 150, 'logo');
-            this.add.button(160,500, 'play', this.startGame, this);
-            button = this.add.button(500,20, 'sound', this.Sound, this);
+            this.add.image(-50, 150, 'logo');
+            this.add.button(110,400, 'play', this.startGame, this);
+            button = this.add.button(400,20, 'sound', this.Sound, this);
             music = this.add.audio('menuSound');
             music.play();
         },

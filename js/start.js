@@ -1,4 +1,4 @@
-var fieldSize = 6; 
+var fieldSize = 5; 
 var orbColors = 6;
 var orbSize = 100;
 //
@@ -20,23 +20,28 @@ var counter = 0;
 var Start = {
     
     preload: function(){
+         /* Для маштабування, адаптивності
+     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+     game.scale.pageAlignHorizontally = true;
+     game.scale.pageAlignVertically = true;
+*/
         game.load.image('background', './assets/background.jpg');
         //gem
         game.load.spritesheet('orbs', './assets/orbs.png', orbSize, orbSize);
         game.load.image('hand', './assets/hand.png')
 
-        game.load.image('score', './assets/bg-score.png');
+        game.load.image('score', './assets/sc.png');
 
         game.load.audio('killSound', './assets/audio/kill.mp3');
         game.load.audio('selectSound', './assets/audio/select-1.mp3');
     },
     create: function(){
         this.add.image(0,0,'background');
-        this.add.image(-70,600, 'score');
+        this.add.image(0,500, 'score');
         sound = this.add.audio('killSound');
         select = this.add.audio('selectSound');
 
-        text = game.add.text(160, 670, '', { font: "60px Fredoka One", fill: "#ffffff"});
+        text = game.add.text(128, 550, '', { font: "60px Fredoka One", fill: "#ffffff"});
 
         drawField();
         showSuggestion();
@@ -44,8 +49,8 @@ var Start = {
         game.input.onDown.add(orbSelect);
         game.input.onUp.add(orbDeselect);
 
-        this.timeInSeconds = 90;
-        this.timeText = this.game.add.text(380, 660, "",{font: '80px Fredoka One', fill:'#000000'});
+        this.timeInSeconds = 5;
+        this.timeText = this.game.add.text(300, 540, "",{font: '79px Fredoka One', fill:'#000000'});
         this.timer = this.game.time.events.loop(Phaser.Timer.SECOND, this.updateTimer, this);
     },
     Sound: function(){
