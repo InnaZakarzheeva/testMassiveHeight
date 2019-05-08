@@ -1,4 +1,3 @@
-# testMassiveHeight.github.io
 
 ## Завдання Зробити Match 3 гру використовуючи рушій Phaser 2 для мобільних пристроїв. 
 
