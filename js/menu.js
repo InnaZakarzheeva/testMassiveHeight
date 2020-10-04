@@ -17,9 +17,6 @@ var Menu =
  
         create: function ()
         {
-            // Создаём и добавляем спрайт в нашу игру. Спрайтом будет
-            // игровой лого для меню
-            // Аргументы: X, Y, имя изображения (см. выше)
             this.add.image(0, 0, 'background');
             this.add.image(-50, 150, 'logo');
             this.add.button(110,400, 'play', this.startGame, this);
@@ -30,7 +27,6 @@ var Menu =
         startGame: function ()
         {
             music.stop();
-            // Меняем состояние "Меню" на состояние "Игра"
             this.state.start('Game');
         },
         Sound: function(){
